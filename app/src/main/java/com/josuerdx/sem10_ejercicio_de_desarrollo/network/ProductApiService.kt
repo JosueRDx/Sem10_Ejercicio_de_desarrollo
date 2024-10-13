@@ -1,5 +1,6 @@
 package com.josuerdx.sem10_ejercicio_de_desarrollo.network
 
+import com.josuerdx.sem10_ejercicio_de_desarrollo.data.Product
 import retrofit2.Response
 import retrofit2.http.*
 
