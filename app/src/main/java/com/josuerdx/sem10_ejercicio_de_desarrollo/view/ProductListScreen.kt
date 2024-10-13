@@ -13,13 +13,13 @@ import com.josuerdx.sem10_ejercicio_de_desarrollo.network.RetrofitClient
 import kotlinx.coroutines.launch
 
 @Composable
-fun ProductListScreen() {
+fun ProductListScreen(category: String) {
     val productList = remember { mutableStateListOf<Product>() }
     val coroutineScope = rememberCoroutineScope()
 
-    LaunchedEffect(Unit) {
+    LaunchedEffect(category) {
         coroutineScope.launch {
-            val products = RetrofitClient.instance.getAllProducts()
+            val products = RetrofitClient.instance.getProductsByCategory(category)
             productList.addAll(products)
         }
     }
